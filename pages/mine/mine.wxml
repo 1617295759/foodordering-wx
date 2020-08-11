@@ -1,0 +1,8 @@
+<!--pages/mine/mine.wxml-->
+<text>我的</text>
+<block >
+      <image class="userinfo-avatar" 
+      src="{{app.globaldata.userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{app.globaldata.userInfo.nickName}}</text>
+      
+ </block>

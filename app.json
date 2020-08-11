@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/userindex/userindex",
+    "pages/admindex/admindex",
+    "pages/mine/mine",
+    "pages/orders/orders"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "三餐邮你",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/userindex/userindex",
+        "text": "首页",
+        "iconPath": "image/tabbar/index.png",
+        "selectedIconPath": "image/tabbar/selectedindex.png"
+      },
+      {
+        "pagePath": "pages/orders/orders",
+        "text": "订单",
+        "iconPath": "image/tabbar/order.png",
+        "selectedIconPath": "image/tabbar/selectedorder.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "image/tabbar/mine.png",
+        "selectedIconPath": "image/tabbar/selectedmine.png"
+      }
+    ]
+  }
+}

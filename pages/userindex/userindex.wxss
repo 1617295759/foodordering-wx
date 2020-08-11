@@ -1,0 +1,8 @@
+/* pages/userindex/userindex.wxss */
+.dishcontainer{
+  margin-bottom: 10rpx;
+  padding: 5rpx;
+  border-bottom: 5rpx;
+  display: flex;
+  flex-direction: row;
+}
