@@ -1,8 +1,28 @@
 /* pages/userindex/userindex.wxss */
+.indexinfo{
+  height: 80px;
+  width: 750rpx;
+  background-color: blue;
+}
+.location{
+  position: absolute;
+  top: 80px;
+  width: 300rpx;
+  height: 400px;
+  background-color: brown;
+}
 .dishcontainer{
+  position: absolute;
+  left: 300rpx;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+.dish{
   margin-bottom: 10rpx;
   padding: 5rpx;
   border-bottom: 5rpx;
   display: flex;
   flex-direction: row;
 }
+

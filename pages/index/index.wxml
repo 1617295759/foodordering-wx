@@ -9,9 +9,9 @@
   </view>
 
   <view class="Logkind">
-   <button bindtap="StudentLog" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+   <button open-type="getUserInfo" bindgetuserinfo="UserLog"> 
    我是学生 </button>
-   <button bindtap="AdmiLog" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+   <button open-type="getUserInfo" bindgetuserinfo="AdmiLog"> 
    我是食堂人员 </button>
   </view>
 

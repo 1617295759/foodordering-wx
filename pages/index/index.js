@@ -9,38 +9,51 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //事件处理函数
-  bindViewTap: function() {
+  //跳转日志
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
   //点击用户登陆按钮，转到用户页面，更改状态
-  StudentLog: function(e){
+  UserLog: function (e) {
+   if(e.detail.userInfo){
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
     wx.switchTab({
       url: '../userindex/userindex',
     })
     try {
       wx.setStorageSync('userstate', '1')
-    } catch (e) { }
+    } catch (e) {}
+   }
   },
   //点击管理员登陆按钮，转到管理员页面，更改用户状态
-  AdmiLog: function(e){
-    wx.navigateTo({
-      url: '../admindex/admindex',
-    })
-    try {
-      wx.setStorageSync('userstate', '3')
-    } catch (e) { }
+  AdmiLog: function (e) {
+    if (e.detail.userInfo) {
+      app.globalData.userInfo = e.detail.userInfo
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+      wx.navigateTo({
+        url: '../admindex/admindex',
+      })
+      try {
+        wx.setStorageSync('userstate', '3')
+      } catch (e) {}
+    }
   },
   onLoad: function () {
-
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -60,39 +73,38 @@ Page({
           })
         }
       })
-     }
-     //根据存储中的用户状态转到相应页面
-     try {
+    }
+    //根据存储中的用户状态转到相应页面
+    try {
       var value = wx.getStorageSync('userstate')
       if (value) {
-        switch(value){
-          case "1": 
+        switch (value) {
+          case "1":
             wx.switchTab({
-             url: '../userindex/userindex',
+              url: '../userindex/userindex',
             })
             break
-          case"2":
+          case "2":
             wx.navigateTo({
               url: '../userindex/userindex',
-            }) 
-          break
+            })
+            break
         }
-      }else{
+      } else {
         wx.setStorage({
-          key:"userstate",
-          data:"0"
+          key: "userstate",
+          data: "0"
         })
       }
     } catch (e) {
       // Do something when catch error
     }
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
   }
-
 })

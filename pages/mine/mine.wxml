@@ -1,8 +1,11 @@
 <!--pages/mine/mine.wxml-->
-<text>我的</text>
-<block >
+<view class="userinfo">
       <image class="userinfo-avatar" 
-      src="{{app.globaldata.userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{app.globaldata.userInfo.nickName}}</text>
-      
- </block>
+      src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <button wx:if="{{userstate==1}}">去认证</button>
+ </view>
+ <view class="options">
+ <button>消息</button>
+ <button>更改信息</button>
+ </view>
