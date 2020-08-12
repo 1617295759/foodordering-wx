@@ -5,7 +5,9 @@
     "pages/userindex/userindex",
     "pages/admindex/admindex",
     "pages/mine/mine",
-    "pages/orders/orders"
+    "pages/orders/orders",
+    "pages/register/register"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

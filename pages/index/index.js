@@ -85,7 +85,7 @@ Page({
             })
             break
           case "2":
-            wx.navigateTo({
+            wx.switchTab({
               url: '../userindex/userindex',
             })
             break

@@ -1,0 +1,68 @@
+/* pages/register/register.wxss */
+page{
+  left:0rpx;
+  right:0rpx;
+  background-color: white;
+}
+
+.inputbox{
+  width:90%;
+  height:100rpx;
+  margin-top: 60rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+
+.plas{
+  font-size: 35rpx;
+  color:#cccc;
+}
+
+.inputs{
+  line-height: 100rpx;
+  font-size: 35rpx;
+  color: #000;
+  margin:auto;
+  margin-left: 20rpx;
+  width:100%;
+}
+
+.click{
+  width:90%;
+  height:100rpx;
+  line-height: 100rpx;
+  margin:auto;
+  margin-top: 80rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: blue;
+  text-align: center;
+  color:white;
+  font-size: 33rpx;
+}
+
+.cha{
+  width:90%;
+  height:50rpx;
+  margin:auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30rpx;
+}
+
+.note{
+  width:90%;
+  height:50rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30rpx;
+  color:blue;
+  font-size: 27;
+
+  margin :auto;
+}

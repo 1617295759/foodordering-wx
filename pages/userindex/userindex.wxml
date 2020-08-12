@@ -1,6 +1,10 @@
 <!--pages/userindex/userindex.wxml-->
-<view class="indexinfo"></view>
-<view class="location"></view>
+<view class="indexinfo">展览信息</view>
+<view class="location">
+	<block wx:for="{{location}}" wx:key="key">
+		<view bindtap="chooseloc" data-loc="{{item}}" class="singleloc">{{item}}</view>
+	</block>
+</view>
 
 <view class="dishcontainer">
 	<view class="dish">
@@ -8,11 +12,12 @@
 		<text>菜品名</text>
 		<button bindtap="wantit">点他</button>
 	</view>
-  <view class="dish">
+	<view class="dish">
 		<image src="../../image/tabbar/index.png" style="height: 40px;width: 40px;"></image>
 		<text>菜品名</text>
 		<button bindtap="wantit">点他</button>
-	</view><view class="dish">
+	</view>
+	<view class="dish">
 		<image src="../../image/tabbar/index.png" style="height: 40px;width: 40px;"></image>
 		<text>菜品名</text>
 		<button bindtap="wantit">点他</button>

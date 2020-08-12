@@ -1,13 +1,27 @@
 // pages/mine/mine.js
 const app = getApp()
 Page({
-
+exit: function(){
+  this.setData({
+    userstate: null,
+    userID: null,
+    phone: null,
+    username: null
+  })
+  wx.clearStorage()
+  wx.redirectTo({
+    url: '../mine/mine',
+  })
+},
   /**
    * 页面的初始数据
    */
   data: {
     userInfo: {},
-    userstate: null
+    userstate: null,
+    phone: "",
+    userID: "",
+    username: ""
   },
 
   /**
@@ -32,7 +46,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var state = wx.getStorageSync('userstate')
+    if(state=='2'){
+      var userID = wx.getStorageSync('userID')
+      var phone = wx.getStorageSync('phone')
+      var username = wx.getStorageSync('username')
+      this.setData({
+        userstate: state,
+        userID: userID,
+        phone: phone,
+        username: username
+      })
+    }
   },
 
   /**
@@ -68,5 +93,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  toRegister: function(e){
+    wx.navigateTo({
+      url: '../register/register',
+    })
   }
 })

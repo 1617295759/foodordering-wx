@@ -1,20 +1,22 @@
 /* pages/userindex/userindex.wxss */
 .indexinfo{
-  height: 80px;
+  height: 250rpx;
   width: 750rpx;
   background-color: blue;
 }
 .location{
   position: absolute;
-  top: 80px;
+  top: 250rpx;
   width: 300rpx;
   height: 400px;
+  display: flex;
+  flex-direction: column;
   background-color: brown;
 }
 .dishcontainer{
   position: absolute;
   left: 300rpx;
-  top: 80px;
+  top: 250rpx;
   display: flex;
   flex-direction: column;
 }
@@ -25,4 +27,8 @@
   display: flex;
   flex-direction: row;
 }
-
+.singleloc{
+  text-align: center;
+  margin-top: 30rpx;
+  height: 90rpx;
+}

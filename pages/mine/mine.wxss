@@ -2,7 +2,7 @@
 .userinfo {
   display: flex;
   flex-direction: row;
-  align-items: left;
+  align-items: center;
 }
 .userinfo-avatar {
   width: 128rpx;
@@ -14,5 +14,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  margin-top: 50rpx;
+}
+.info{
+  margin-top: 50rpx;
 }

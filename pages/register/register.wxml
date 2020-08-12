@@ -1,0 +1,17 @@
+<!--pages/register/register.wxml-->
+<text>认证信息</text>
+<view class='background'>
+	<view class='inputbox'>
+		<input id='userID' placeholder="您的学号" placeholder-class="plas" class='inputs' type='number' bindblur='userIDinput'></input>
+	</view>
+	<view class='inputbox'>
+		<input id='number' placeholder="请输入手机号" placeholder-class="plas" class='inputs' type='number' bindblur='numberinput'></input>
+	</view>
+	<view class='inputbox'>
+		<input id='username' placeholder="请输入您的姓名" placeholder-class="plas" class='inputs' bindblur='usernameinput'></input>
+	</view>
+	<view>
+		<view id='button' class='click' bindtap='regist'>注册</view>
+		<view class='cha' bindtap="signin"><text class='note'>已有账户，点我登录</text></view>
+	</view>
+</view>
