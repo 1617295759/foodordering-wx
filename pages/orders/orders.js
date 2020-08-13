@@ -34,6 +34,7 @@ Page({
       },
       success(res){
         if(!res.data['error_code']){
+          console.log(res.data)
           that.setData({
             orderlist: res.data
           })

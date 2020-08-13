@@ -33,7 +33,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx2bf927a2e9cbbb8b",
-	"projectname": "miniprogram-1",
+	"projectname": "Food-Ordering",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
