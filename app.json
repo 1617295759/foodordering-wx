@@ -1,12 +1,16 @@
 {
   "pages": [
+    "pages/orders/orders",
     "pages/index/index",
-    "pages/logs/logs",
     "pages/userindex/userindex",
     "pages/admindex/admindex",
     "pages/mine/mine",
-    "pages/orders/orders",
-    "pages/register/register"
+    
+    "pages/register/register",
+    "pages/addorder/addorder",
+    "pages/login/login"
+    
+
     
   ],
   "window": {

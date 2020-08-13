@@ -1,1 +1,21 @@
-/* pages/orders/orders.wxss */
+.singleorder{
+  width:90%;
+  margin:auto;
+  margin-top: 10rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 33rpx;
+  border-style: groove;
+  border-radius: 5%;
+  border-color: green;
+  border-width: 10rpx;
+  font-size: 40rpx;
+}
+.orderID{
+  text-align: left;
+}
+.content{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}

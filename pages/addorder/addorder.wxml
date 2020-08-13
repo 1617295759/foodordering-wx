@@ -1,0 +1,26 @@
+<!--pages/addorder/addorder.wxml-->
+<text>添加订单</text>
+<view class="mealinfos">
+	<view class="singleinfo">
+		<text>餐品名称：</text>
+		<view>{{meal.name}}</view>
+	</view>
+	<view class="singleinfo">
+	<text>位置</text>
+		<view>{{meal.location}}</view>
+	</view>
+	<view class="singleinfo">
+	<text>价格</text>
+		<view>{{meal.price}}元</view>
+	</view>
+	<view class="singleinfo">
+	<view>预计时间</view>
+		<picker bindchange="bindPickerChange" value="{{index}}" range="{{aftertime}}">
+			<view class="picker">
+				{{aftertime[index]}}分钟后取餐
+			</view>
+		</picker>
+	</view>
+
+</view>
+<button bindtap="orderit" class="orderit">确认点餐</button>

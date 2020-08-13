@@ -7,21 +7,22 @@
 .location{
   position: absolute;
   top: 250rpx;
-  width: 300rpx;
+  width: 270rpx;
   height: 400px;
   display: flex;
   flex-direction: column;
-  background-color: brown;
+  background-color: yellow;
 }
 .dishcontainer{
   position: absolute;
-  left: 300rpx;
+  left: 270rpx;
   top: 250rpx;
   display: flex;
   flex-direction: column;
 }
 .dish{
   margin-bottom: 10rpx;
+  margin-left: auto;
   padding: 5rpx;
   border-bottom: 5rpx;
   display: flex;

@@ -19,12 +19,38 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=UTF-8' 
       },
       success (res) {
-        //var data = JSON.parse(res.data);
-        console.log(res.data)
-      },
-      complete(res){
+        if(res.data[0]!='{'){
+          that.setData({
+            meals:res.data
+          })
+        }
       }
     })
+  },
+  wantit: function(e){
+    let meal = JSON.stringify(e.currentTarget.dataset.meal)
+    var that = this
+    var state = wx.getStorageSync('userstate')
+    if(state=='2'){
+      wx.navigateTo({
+        url: '../addorder/addorder?meal='+ meal
+      })
+    }else{
+      wx.showModal({
+        cancelColor: 'cancelColor',
+        title: '请前往认证',
+        cancelText:'先不认证',
+        confirmText:'现在就去',
+        success(res){
+          if(res.confirm){
+            wx.navigateTo({
+              url: '../register/register',
+            })
+          }
+        }
+      })
+    }
+   
   },
   /**
    * 页面的初始数据
@@ -32,7 +58,7 @@ Page({
   data: {
     meals:{},
     location:['学生食堂一楼','学生食堂二楼','学生食堂三楼','学生食堂四楼','学生食堂五楼',
-    '教师食堂一楼','教师食堂二楼','教师食堂三楼','教师食堂四楼']
+    '教工食堂一楼','教工食堂二楼','教工食堂三楼','教工食堂四楼']
   },
 
   /**

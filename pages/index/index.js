@@ -9,12 +9,6 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //跳转日志
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   //点击用户登陆按钮，转到用户页面，更改状态
   UserLog: function (e) {
    if(e.detail.userInfo){

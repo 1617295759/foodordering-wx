@@ -1,20 +1,10 @@
-// pages/register/register.js
-const app = getApp()
+// pages/login/login.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    phone: "",
-    userID: "",
-    username: ""
-  },
   numberinput: function (e) {
-    this.data.phone = e.detail.value;
+    this.data.number = e.detail.value;
     var that = this
     var phonereg = /^1(3|4|5|6|7|8|9)\d{9}$/;
-    if (!phonereg.test(that.data.phone)) {
+    if (!phonereg.test(that.data.number)) {
       wx.showToast({
         title: '手机号错误',
         icon: 'none'
@@ -32,53 +22,48 @@ Page({
       })
     }
   },
-  usernameinput: function (e) {
-    this.data.username = e.detail.value;
-  },
-  regist: function (e) {
+  login: function(){
     var that = this
     var app = getApp()
     var userIDreg = /^20\d{8}$/;
     var phonereg = /^1(3|4|5|6|7|8|9)\d{9}$/;
-    if(userIDreg.test(that.data.userID)&&(phonereg.test(that.data.phone))&&
-    (that.data.username)){
+    if(userIDreg.test(that.data.userID)&&(phonereg.test(that.data.number))){
       wx.request({
-        url: 'http://140.143.231.173:8080/food_ordering_war4/registerServlet',
+        url: 'http://140.143.231.173:8080/food_ordering_war4/loginServlet',
         method: 'post',
         data: {
           userID: that.data.userID,
-          phone: that.data.phone,
-          userName: that.data.username,
-          avatarURL: app.globalData.userInfo.avatarUrl
+          phone: that.data.number
         },
         dataType: "json",
         header: {
           'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
         },
         success(res) {
-          console.log(res.data)
+          var that = this
+          var user = res.data['user']
           if(res.data['error_code']==0){
             wx.showToast({
-              title: '注册成功',
+              title: '登录成功',
               icon: 'success'
             })
-            wx.setStorageSync('userstate', "2")
-            wx.setStorageSync('userID', that.data.userID)
-            wx.setStorageSync('phone', that.data.phone)
-            wx.setStorageSync('username', that.data.username)
-            wx.setStorageSync('avatarURL', app.globalData.userInfo.avatarUrl)
+            //将获取的信息保存在存储
+            wx.setStorageSync('userstate', '2')
+            wx.setStorageSync('username', user.userName)
+            wx.setStorageSync('phone', user.phone)
+            wx.setStorageSync('userID', user.userID)
             wx.switchTab({
               url: '../mine/mine',
             })
           }else{
             wx.showModal({
-              title: '该学号已注册',
-              showCancel: false,
-              confirmText:'去登陆',
+              title: '信息错误',
+              cancelText: '再试一次',
+              confirmText:'去注册',
               success(res){
                  if(res.confirm){
                   wx.navigateTo({
-                    url: '../login/login',
+                    url: '../register/register',
                   })
                 }
               }
@@ -99,15 +84,21 @@ Page({
       })
     }
   },
-  signin: function(){
-    wx.navigateTo({
-      url: '../login/login',
-    })
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    number: "",
+    userID: "",
+    username: ""
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

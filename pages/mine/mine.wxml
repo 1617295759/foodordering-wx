@@ -4,7 +4,9 @@
 	<text class="userinfo-nickname">{{userInfo.nickName}}</text>
 </view>
 <view class="options">
-	<button wx:if="{{userstate!=2}}" bindtap="toRegister">去认证身份</button>
+	<view wx:if="{{userstate!=2}}">
+	<button bindtap="toRegister">去认证身份</button>
+	</view>
 	<view wx:else>
   <view class="info">我的学号{{userID}}</view>
   <view class="info">我的手机{{phone}}</view>
