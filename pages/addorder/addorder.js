@@ -18,7 +18,7 @@ Page({
       method: 'post',
       data: {
         userID: userID,
-        mealId: that.data.meal.mealID,
+        mealID: that.data.meal.mealID,
         state:'0',
         pickUpTime: that.data.pickuptime
       },
