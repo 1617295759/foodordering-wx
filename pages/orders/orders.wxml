@@ -1,20 +1,42 @@
 <view wx:if='{{orderlist.length>0}}'>
-<view  wx:for='{{orderlist}}' wx:key="key" class='orders'>
-	<view class="singleorder">
-		<view class="orderID">订单编号：{{item.orderID}}</view>
-		<view class="content">
-			<text>订单内容</text>
-			<view>菜品ID：{{item.mealID}}</view>
-		</view>
-		<view class="content">
-			<text>取餐时间</text>
-			<view>{{item.pickUpTime}}</view>
-		</view>
-		<view class='content'>
-			<text>订单状态</text>
-			<view>{{item.state}}</view>
+	<view wx:for='{{orderlist}}' wx:key="key" class='orders'>
+		<view style="margin-bottom:45rpx" class="weui-form-preview">
+			<view class="weui-form-preview__hd">
+				<label class="weui-form-preview__label">菜品名称</label>
+				<em class="weui-form-preview__value">{{item.name}}</em>
+			</view>
+			<view class="weui-form-preview__bd">
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">订单ID</label>
+					<text class="weui-form-preview__value">{{item.orderID}}</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">下单时间</label>
+					<text class="weui-form-preview__value">{{item.orderTime}}</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">延迟时间</label>
+					<text class="weui-form-preview__value">{{item.pickUpTime}}分钟</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">价格</label>
+					<text class="weui-form-preview__value">{{item.price}}</text>
+				</view>
+			</view>
+
+			<view wx:if='{{item.state===0}}' class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary">制作中</a>
+			</view>
+			<view wx:if='{{item.state===1}}' class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_default">待取餐</a>
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary"
+				bindtap='takeit' data-orderid="{{item.orderID}}">取餐完毕</a>
+			</view>
+			<view wx:if='{{item.state===2}}' class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary">已取餐</a>
+			</view>
+
 		</view>
 	</view>
-</view>
 </view>
 <view wx:else>当前无订单</view>

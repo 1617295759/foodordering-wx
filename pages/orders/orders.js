@@ -1,12 +1,39 @@
 // pages/orders/orders.js
 Page({
 
+  takeit: function (e) {
+    var orderID = e.currentTarget.dataset.orderid
+    console.log(orderID)
+    wx.request({
+      url: 'http://140.143.231.173:8080/food_ordering_war4/modifyOrderServlet',
+      method: 'post',
+      data: {
+        orderID: orderID,
+        state: '2'
+      },
+      dataType: "json",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success(res) {
+        if(res.data['error_code']=='0'){
+          wx.showToast({
+            title: '用餐愉快！',
+            icon: 'success'
+          })
+          wx.switchTab({
+            url: '../userindex/userindex',
+          })
+        }
+      }
+    })
+  },
   /**
    * 页面的初始数据
    */
   data: {
-    orderlist:{},
-    state:''
+    orderlist: {},
+    state: ''
   },
 
   /**
@@ -22,24 +49,25 @@ Page({
   onShow: function () {
     var that = this
     var userID = wx.getStorageSync('userID')
-    wx.request({
-      url: 'http://140.143.231.173:8080/food_ordering_war4/queryOrderServlet',
-      method: 'post',
-      data: {
-        userID: userID
-      },
-      dataType: "json",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-      success(res){
-        if(res.data[0]!='{'){
-          that.setData({
-            orderlist: res.data
-          })
-          
+    if (wx.getStorageSync('userstate') == 2) {
+      wx.request({
+        url: 'http://140.143.231.173:8080/food_ordering_war4/queryOrderServlet',
+        method: 'post',
+        data: {
+          userID: userID
+        },
+        dataType: "json",
+        header: {
+          'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        success(res) {
+          if (res.data[0] != '{') {
+            that.setData({
+              orderlist: res.data
+            })
+          }
         }
-      }
-    })
+      })
+    }
   },
 })

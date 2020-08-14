@@ -7,7 +7,7 @@
 .location{
   position: absolute;
   top: 250rpx;
-  width: 270rpx;
+  width: 170rpx;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 }
 .dishcontainer{
   position: absolute;
-  left: 270rpx;
+  left: 170rpx;
   top: 250rpx;
   display: flex;
   flex-direction: column;
@@ -27,6 +27,7 @@
   border-bottom: 5rpx;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .singleloc{
   text-align: center;

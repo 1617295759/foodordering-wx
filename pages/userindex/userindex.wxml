@@ -1,5 +1,18 @@
 <!--pages/userindex/userindex.wxml-->
-<view class="indexinfo">展览信息</view>
+<view class="indexinfo">
+	<!-- <view class="page-section page-section-spacing swiper">
+      <swiper
+        indicator-dots=true autoplay=true circular=true vertical=false
+        interval=2000 duration=1000 previous-margin=0px next-margin=0px>
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> -->
+</view>
+
 <view class="location">
 	<block wx:for="{{location}}" wx:key="key">
 		<view bindtap="chooseloc" data-loc="{{item}}" class="singleloc">{{item}}</view>
@@ -8,8 +21,11 @@
 
 <view class="dishcontainer">
 	<view class="dish" wx:for="{{meals}}" wx:key="key">
-		<view>{{item.name}}</view>
-		<view>价格：{{item.price}}</view>
-		<button bindtap="wantit" data-meal="{{item}}">点他</button>
+		<view>
+			<text>{{item.name}}\t</text>
+			<text>{{item.price}}元</text>
+		</view>
+		<button style="width: 150rpx;height: 60rpx;text-align:center;justify-content: right;" 
+		class="weui-btn weui-btn_mini weui-btn_primary" bindtap="wantit" data-meal="{{item}}">点他</button>
 	</view>
 </view>

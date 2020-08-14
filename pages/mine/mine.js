@@ -9,8 +9,8 @@ exit: function(){
     username: null
   })
   wx.clearStorage()
-  wx.redirectTo({
-    url: '../mine/mine',
+  wx.switchTab({
+    url: '../mine/mine'
   })
 },
   /**
