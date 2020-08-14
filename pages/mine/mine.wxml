@@ -5,13 +5,21 @@
 </view>
 <view class="options">
 	<view wx:if="{{userstate!=2}}">
-	<button bindtap="toRegister">去认证身份</button>
+		<button bindtap="toRegister" class="weui-btn weui-btn_primary">去认证身份</button>
 	</view>
 	<view wx:else>
-  <view class="info">我的学号{{userID}}</view>
-  <view class="info">我的手机{{phone}}</view>
-  <view class="info">我的姓名{{username}}</view>
-		<button class="info">我的消息</button>
-		<button bindtap="exit" class="info">退出登录</button>
+		<view class="info">
+			<text>我的学号</text>
+			<view>{{userID}}</view>
+		</view>
+		<view class="info"> <text>我的手机</text>
+			<view>{{phone}}</view>
+		</view>
+		<view class="info"> <text>我的姓名</text>
+			<view>{{username}}</view>
+		</view>
+		<button style="margin-top: 150rpx" class="weui-btn weui-btn_default">我的消息</button>
+		<button bindtap="exit" class="weui-btn weui-btn_default">退出登录</button>
 	</view>
+
 </view>

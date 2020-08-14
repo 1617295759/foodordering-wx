@@ -10,9 +10,6 @@ Page({
   orderit: function(){
     var that = this
     var userID = wx.getStorageSync('userID')
-    console.log(userID)
-    console.log(that.data.meal.mealID)
-    console.log(that.data.pickuptime)
     wx.request({
       url: 'http://140.143.231.173:8080/food_ordering_war4/addOrderServlet',
       method: 'post',
@@ -27,11 +24,9 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       success(res) {
-        console.log(res.data)
         if(res.data['error_code']==0){
           wx.showToast({
-            title: '点餐成功',
-            icon:'success'
+            title: '点餐成功'
           })
           wx.switchTab({
             url: '../orders/orders',

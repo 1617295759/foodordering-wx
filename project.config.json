@@ -31,8 +31,8 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
-	"appid": "wx2bf927a2e9cbbb8b",
+	"libVersion": "2.12.0",
+	"appid": "wx76d8461e28d0f779",
 	"projectname": "Food-Ordering",
 	"debugOptions": {
 		"hidedInDevtools": []

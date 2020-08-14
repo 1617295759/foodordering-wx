@@ -31,21 +31,6 @@ page{
   margin-left: 20rpx;
   width:100%;
 }
-
-.click{
-  width:90%;
-  height:100rpx;
-  line-height: 100rpx;
-  margin:auto;
-  margin-top: 80rpx;
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: green;
-  text-align: center;
-  color:white;
-  font-size: 33rpx;
-}
-
 .cha{
   width:90%;
   height:50rpx;

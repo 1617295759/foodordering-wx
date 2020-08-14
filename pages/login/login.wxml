@@ -8,7 +8,7 @@
 		<input id='number' placeholder="请输入手机号" placeholder-class="plas" class='inputs' type='number' bindblur='numberinput'></input>
 	</view>
   <view>
-		<view id='button' class='click' bindtap='login'>登录</view>
+		<view id='button' style="margin-top: 80rpx" class='weui-btn weui-btn_primary' bindtap='login'>登录</view>
 		<view class='cha' bindtap="signin"><text class='note'>没有账户，点我注册</text></view>
 	</view>
 	</view>

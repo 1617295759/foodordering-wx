@@ -33,11 +33,11 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       success(res){
-        if(!res.data['error_code']){
-          console.log(res.data)
+        if(res.data[0]!='{'){
           that.setData({
             orderlist: res.data
           })
+          
         }
       }
     })

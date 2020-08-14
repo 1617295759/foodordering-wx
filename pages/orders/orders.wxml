@@ -1,17 +1,20 @@
-<view wx:for='{{orderlist}}' wx:key="key" class='orders'>
+<view wx:if='{{orderlist.length>0}}'>
+<view  wx:for='{{orderlist}}' wx:key="key" class='orders'>
 	<view class="singleorder">
 		<view class="orderID">订单编号：{{item.orderID}}</view>
 		<view class="content">
 			<text>订单内容</text>
 			<view>菜品ID：{{item.mealID}}</view>
 		</view>
-    <view class="content">
-    <text>取餐时间</text>
-    <view>{{item.pickUpTime}}</view>
-    </view>
-    <view class='content'>
-    <text>订单状态</text>
-    <view>{{item.state}}</view>
-    </view>
+		<view class="content">
+			<text>取餐时间</text>
+			<view>{{item.pickUpTime}}</view>
+		</view>
+		<view class='content'>
+			<text>订单状态</text>
+			<view>{{item.state}}</view>
+		</view>
 	</view>
 </view>
+</view>
+<view wx:else>当前无订单</view>

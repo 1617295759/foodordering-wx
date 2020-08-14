@@ -84,6 +84,11 @@ Page({
       })
     }
   },
+  signin: function(){
+    wx.navigateTo({
+      url: '../register/register',
+    })
+  },
   /**
    * 页面的初始数据
    */
