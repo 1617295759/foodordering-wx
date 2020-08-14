@@ -3,7 +3,6 @@ Page({
 
   takeit: function (e) {
     var orderID = e.currentTarget.dataset.orderid
-    console.log(orderID)
     wx.request({
       url: 'http://140.143.231.173:8080/food_ordering_war4/modifyOrderServlet',
       method: 'post',
@@ -17,12 +16,17 @@ Page({
       },
       success(res) {
         if(res.data['error_code']=='0'){
-          wx.showToast({
+          wx.showModal({
             title: '用餐愉快！',
-            icon: 'success'
-          })
-          wx.switchTab({
-            url: '../userindex/userindex',
+            showCancel: false,
+            confirmText: '返回主页',
+            success (res) {
+              if (res.confirm) {
+                wx.switchTab({
+                  url: '../userindex/userindex'
+                })
+              } 
+              }
           })
         }
       }
@@ -40,7 +44,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -61,7 +65,7 @@ Page({
           'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
         },
         success(res) {
-          if (res.data[0] != '{') {
+          if (!res.data['error_code']) {
             that.setData({
               orderlist: res.data
             })

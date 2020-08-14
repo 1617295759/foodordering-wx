@@ -41,7 +41,7 @@ Page({
   data: {
     meal:{},
     aftertime: ['0','5', '10', '15', '20','25','30'],
-    pickuptime:'',
+    pickuptime:'0',
     index: 0
   },
 
