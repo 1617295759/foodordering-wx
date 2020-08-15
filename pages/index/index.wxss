@@ -1,28 +1,9 @@
 /**index.wxss**/
-.container{
-  /**background-image: url(../image/induce.png);**/
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+page{ 
+  background-size:100% 100%; 
+  background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597466380024&di=8d7f4e2e23c920653411b7f41a82709f&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Fback_pic%2F05%2F52%2F27%2F985aed8013d2a33.jpg%2521%2Ffwfh%2F804x1137%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue') }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
 
 .Logkinds{
-  margin-top: 650rpx;
+  margin-top: 350rpx;
 }

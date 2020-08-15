@@ -1,5 +1,5 @@
 <view wx:if='{{orderlist.length>0}}'>
-	<view wx:for='{{orderlist}}' wx:key="key" style="margin-bottom:45rpx" class="weui-form-preview">
+	<view wx:for='{{orderlist}}' wx:key="key" style="margin-bottom:45rpx;margin-left:30rpx;margin-right:30rpx;" class="weui-form-preview">
 		<view class="weui-form-preview__hd">
 			<view class="weui-form-preview__item">
 				<label class="weui-form-preview__label">菜品名称</label>

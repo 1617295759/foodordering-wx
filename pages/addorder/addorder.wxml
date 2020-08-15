@@ -1,5 +1,4 @@
 <!--pages/addorder/addorder.wxml-->
-<text>添加订单</text>
 <view class="mealinfos">
 	<view class="singleinfo">
 		<text>餐品名称：</text>

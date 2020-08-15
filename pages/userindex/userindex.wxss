@@ -2,7 +2,6 @@
 .indexinfo{
   height: 250rpx;
   width: 750rpx;
-  background-color: blue;
 }
 .location{
   position: absolute;
@@ -11,7 +10,22 @@
   height: 400px;
   display: flex;
   flex-direction: column;
-  background-color: yellow;
+}
+.Default-loc{
+  padding: 26rpx 0;
+  font-size: 28rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #E2E2E2;
+  border-left: 8rpx solid #F7F7F7;
+}
+.Acvtive-loc{
+  padding: 26rpx 0;
+  background: #fff;
+  border-left: 8rpx solid #89A0D2;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+  font-size: 28rpx;
 }
 .dishcontainer{
   position: absolute;
@@ -21,16 +35,29 @@
   flex-direction: column;
 }
 .dish{
-  margin-bottom: 10rpx;
-  margin-left: auto;
-  padding: 5rpx;
-  border-bottom: 5rpx;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
-.singleloc{
-  text-align: center;
-  margin-top: 30rpx;
+  justify-content: space-around;
   height: 90rpx;
+  width: 580rpx;
+  margin: auto;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #E2E2E2;
 }
+.product-name{
+  font-weight: 550;
+  color: #333;
+  font-size: 40rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.product-price{
+  font-weight: 550;
+  color: #333;
+  font-size: 45rpx;
+  bottom: 0rpx;
+  margin-right: 50rpx;
+}
+

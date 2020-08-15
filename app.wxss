@@ -9,3 +9,6 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+page {
+  background-color: rgba(223, 202, 165, 0.498);
+}

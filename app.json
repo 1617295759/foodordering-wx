@@ -14,11 +14,11 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FFD700",
     "navigationBarTitleText": "三餐邮你",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
+
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#7A7E83",

@@ -1,31 +1,25 @@
 <!--pages/userindex/userindex.wxml-->
 <view class="indexinfo">
-	<!-- <view class="page-section page-section-spacing swiper">
-      <swiper
-        indicator-dots=true autoplay=true circular=true vertical=false
-        interval=2000 duration=1000 previous-margin=0px next-margin=0px>
-        <block wx:for="{{background}}" wx:key="*this">
-          <swiper-item>
-            <view class="swiper-item {{item}}"></view>
-          </swiper-item>
-        </block>
-      </swiper>
-    </view> -->
+	<view class="page-section page-section-spacing swiper">
+		<swiper autoplay='true' interval='4000' duration='4000' circular='true'
+		 previous-margin="10rpx" next-margin="10rpx" style="height: 250rpx;">
+				<swiper-item wx:for="{{swiperpic}}" wx:key='key'>
+					<image src='{{item}}' mode='widthFix' class='index-swiper-image'></image>
+				</swiper-item>
+		</swiper>
+	</view>
 </view>
 
 <view class="location">
 	<block wx:for="{{location}}" wx:key="key">
-		<view bindtap="chooseloc" data-loc="{{item}}" class="singleloc">{{item}}</view>
+		<view bindtap="chooseloc" data-loc="{{item}}" data-index='{{index}}' class='{{index == locidx ? "Acvtive-loc":"Default-loc"}}'>{{item}}</view>
 	</block>
 </view>
 
 <view class="dishcontainer">
 	<view class="dish" wx:for="{{meals}}" wx:key="key">
-		<view>
-			<text>{{item.name}}\t</text>
-			<text>{{item.price}}元</text>
-		</view>
-		<button style="width: 150rpx;height: 60rpx;text-align:center;justify-content: right;" 
-		class="weui-btn weui-btn_mini weui-btn_primary" bindtap="wantit" data-meal="{{item}}">点他</button>
+		<view class='product-name'>{{item.name}}\t</view>
+		<view class='product-price'>￥{{item.price}}</view>
+		<button style="height:80rpx;" class="weui-btn weui-btn_mini weui-btn_primary" bindtap="wantit" data-meal="{{item}}">+</button>
 	</view>
 </view>

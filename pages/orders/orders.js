@@ -72,6 +72,10 @@ Page({
           }
         }
       })
+    }else{
+      that.setData({
+        orderlist: {}
+      })
     }
   },
 })
