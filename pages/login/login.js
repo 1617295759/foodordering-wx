@@ -29,7 +29,7 @@ Page({
     var phonereg = /^1(3|4|5|6|7|8|9)\d{9}$/;
     if(userIDreg.test(that.data.userID)&&(phonereg.test(that.data.number))){
       wx.request({
-        url: 'http://140.143.231.173:8080/food_ordering_war4/loginServlet',
+        url: 'http://www.foodordering.work/food_ordering_war4/loginServlet',
         method: 'post',
         data: {
           userID: that.data.userID,

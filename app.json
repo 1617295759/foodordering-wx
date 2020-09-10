@@ -8,9 +8,6 @@
     "pages/register/register",
     "pages/addorder/addorder",
     "pages/login/login"
-    
-
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,7 +15,6 @@
     "navigationBarTitleText": "三餐邮你",
     "navigationBarTextStyle": "black"
   },
-
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#7A7E83",

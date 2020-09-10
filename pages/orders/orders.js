@@ -4,7 +4,7 @@ Page({
   takeit: function (e) {
     var orderID = e.currentTarget.dataset.orderid
     wx.request({
-      url: 'http://140.143.231.173:8080/food_ordering_war4/modifyOrderServlet',
+      url: 'http://www.foodordering.work/food_ordering_war4/modifyOrderServlet',
       method: 'post',
       data: {
         orderID: orderID,
@@ -55,7 +55,7 @@ Page({
     var userID = wx.getStorageSync('userID')
     if (wx.getStorageSync('userstate') == 2) {
       wx.request({
-        url: 'http://140.143.231.173:8080/food_ordering_war4/queryOrderServlet',
+        url: 'http://www.foodordering.work/food_ordering_war4/queryOrderServlet',
         method: 'post',
         data: {
           userID: userID
@@ -66,6 +66,7 @@ Page({
         },
         success(res) {
           if (!res.data['error_code']) {
+            console.log( res.data);
             that.setData({
               orderlist: res.data
             })

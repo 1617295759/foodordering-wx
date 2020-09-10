@@ -43,7 +43,7 @@ Page({
     if(userIDreg.test(that.data.userID)&&(phonereg.test(that.data.phone))&&
     (that.data.username)){
       wx.request({
-        url: 'http://140.143.231.173:8080/food_ordering_war4/registerServlet',
+        url: 'http://www.foodordering.work/food_ordering_war4/registerServlet',
         method: 'post',
         data: {
           userID: that.data.userID,
