@@ -10,6 +10,7 @@
   height: 400px;
   display: flex;
   flex-direction: column;
+  margin-bottom: auto;
 }
 .Default-loc{
   padding: 26rpx 0;
@@ -33,6 +34,7 @@
   top: 250rpx;
   display: flex;
   flex-direction: column;
+  margin-bottom: auto;
 }
 .dish{
   display: flex;

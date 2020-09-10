@@ -1,9 +1,13 @@
-<view wx:if='{{orderlist.length>0}}'>
+<import src="/components/tabbar/tabbar" />
+<template is="tabbar" data="{{tabBar}}" />
+<tabbar class='tabbar'></tabbar>
+
+<view wx:if='{{orderlist.length>0&&orderlist.length!=undefined}}'>
 	<view wx:for='{{orderlist}}' wx:key="key" style="margin-bottom:45rpx;margin-left:30rpx;margin-right:30rpx;" class="weui-form-preview">
 		<view class="weui-form-preview__hd">
 			<view class="weui-form-preview__item">
 				<label class="weui-form-preview__label">菜品名称</label>
-				<em class="weui-form-preview__value">{{item.name}}</em>
+				<em class="weui-form-preview__value">{{item.meal.name}}</em>
 			</view>
 		</view>
 		<view class="weui-form-preview__bd">
@@ -13,10 +17,10 @@
 			</view>
 			<view class="weui-form-preview__item">
 				<label class="weui-form-preview__label">价格</label>
-				<text class="weui-form-preview__value">{{item.price}}</text>
+				<text class="weui-form-preview__value">{{item.meal.price}}</text>
 			</view>
 			<view class="weui-form-preview__item">
-				<label class="weui-form-preview__label">下单时间</label>
+				<label class="weui-form-preview__label">订餐时间</label>
 				<text class="weui-form-preview__value">{{item.orderTime}}</text>
 			</view>
 		</view>

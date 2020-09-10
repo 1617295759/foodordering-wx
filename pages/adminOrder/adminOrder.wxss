@@ -1,0 +1,11 @@
+.noOrder {
+  font-size: 50rpx;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+page {
+  background: #1fb9ce;
+}  

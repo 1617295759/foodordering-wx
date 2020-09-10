@@ -1,0 +1,26 @@
+.tab-item {
+  padding: 0 20rpx;
+  text-align: center;
+  padding-top: 8px;
+  z-index:200;
+}
+
+.tab-img {
+  width: 23px;
+  height: 23px;
+  display: block;
+  margin: auto;
+  z-index:200;
+}
+
+.tab-bar {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index:200;
+}

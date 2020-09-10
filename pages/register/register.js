@@ -43,7 +43,7 @@ Page({
     if(userIDreg.test(that.data.userID)&&(phonereg.test(that.data.phone))&&
     (that.data.username)){
       wx.request({
-        url: 'http://www.foodordering.work/food_ordering_war4/registerServlet',
+        url: 'http://www.foodordering.work/food_ordering_restructure/registerServlet',
         method: 'post',
         data: {
           userID: that.data.userID,
@@ -67,7 +67,9 @@ Page({
             wx.setStorageSync('phone', that.data.phone)
             wx.setStorageSync('username', that.data.username)
             wx.setStorageSync('avatarURL', app.globalData.userInfo.avatarUrl)
-            wx.switchTab({
+            
+            wx.setStorageSync('userDetail', 1)
+            wx.reLaunch({
               url: '../mine/mine',
             })
           }else{

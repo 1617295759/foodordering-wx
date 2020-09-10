@@ -11,7 +11,7 @@ Page({
     var that = this
     var userID = wx.getStorageSync('userID')
     wx.request({
-      url: 'http://www.foodordering.work/food_ordering_war4/addOrderServlet',
+      url: 'http://www.foodordering.work/food_ordering_restructure/addOrderServlet',
       method: 'post',
       data: {
         userID: userID,
@@ -28,7 +28,7 @@ Page({
           wx.showToast({
             title: '点餐成功'
           })
-          wx.switchTab({
+          wx.navigateTo({
             url: '../orders/orders',
           })
         }

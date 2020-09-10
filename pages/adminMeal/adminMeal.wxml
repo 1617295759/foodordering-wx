@@ -1,0 +1,46 @@
+<view wx:if='{{orderlist.length>0}}'>
+	<view wx:for='{{orderlist}}' wx:key="key" style="margin-bottom:45rpx" class="weui-form-preview">
+		<view class="weui-form-preview__hd">
+			<view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">菜品名称</label>
+				<em class="weui-form-preview__value">{{item.name}}</em>
+			</view>
+		</view>
+		<view class="weui-form-preview__bd">
+			<view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">所在食堂</label>
+				<text class="weui-form-preview__value">{{item.location}}</text>
+			</view>
+			<view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">价格</label>
+				<text class="weui-form-preview__value">{{item.price}} 元</text>
+			</view>
+			<view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">菜品状态</label>
+				<text class="weui-form-preview__value">{{item.state==0?'在售':'已下架'}}</text>
+			</view>
+		</view>
+
+		<view wx:if='{{item.state===0}}' class="weui-form-preview__ft">
+			<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap='showModal' data-mealid="{{item.mealID}}" data-state="{{item.state}}">修改价格</a>
+			<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap='takeit' data-mealid="{{item.mealID}}" 
+			data-price="{{item.price}}" data-state="{{item.state}}">下架</a>
+		</view>
+
+		<view wx:if='{{item.state===1}}' class="weui-form-preview__ft">
+			<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap='showModal' data-mealid="{{item.mealID}}" data-state="{{item.state}}">
+			修改价格</a>
+			<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap='takeit' data-mealid="{{item.mealID}}" 
+			data-price="{{item.price}}" data-state="{{item.state}}">
+			上架</a>
+		</view>
+
+		<view>
+			<modal title="修改价格" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel" >
+				<input type='number' placeholder="新价格" bindinput="priceInput" />
+			</modal>
+		</view>
+
+	</view>
+</view>
+<view class="noOrder" wx:else>当前无菜品</view>

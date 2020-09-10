@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabbar": "/components/tabbar/tabbar"
+  },
+  "navigationBarTitleText": "管理订单",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}

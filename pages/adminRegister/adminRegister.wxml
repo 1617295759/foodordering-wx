@@ -1,0 +1,17 @@
+<!--pages/adminRegister/adminRegister.wxml-->
+<view class="background">
+  <view class="first">
+    <input id="name" placeholder="姓名" placeholder-class='plas' class='inputs' type="text" bindinput='usernameInput' />
+  </view>
+  <view class="second">
+    <input id="phonenumber" placeholder="手机号" placeholder-class='plas' class='inputs' type="number" bindinput='phonenumberInput' />
+  </view>
+  <view class="second">
+    <input id="psw" placeholder="管理员ID" placeholder-class='plas' class='inputs' type="number" bindinput='adminIDInput' />
+  </view>
+  <button id="btn" class="click" disabled="{{is_disabled}}" 
+  open-type="getUserInfo" bindgetuserinfo="regist">注 册</button>
+  <view class="cha" bindtap='signin'>
+    <text class="no">已有账号，点我登录</text>
+  </view>
+</view>

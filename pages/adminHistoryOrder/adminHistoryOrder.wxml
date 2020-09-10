@@ -1,0 +1,41 @@
+<view wx:if='{{orderlist.length>0}}'>
+	<view wx:if='{{item.state==1 ||item.state==2}}' wx:for='{{orderlist}}' wx:key="key" style="margin-bottom:45rpx" class="weui-form-preview">
+		<view class="weui-form-preview__hd">
+			<view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">菜品名称</label>
+				<em class="weui-form-preview__value">{{item.name}}</em>
+			</view>
+		</view>
+		<view class="weui-form-preview__bd">
+			<view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">订单ID</label>
+				<text class="weui-form-preview__value">{{item.orderID}}</text>
+			</view>
+			<view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">下单时间</label>
+				<text class="weui-form-preview__value">{{item.orderTime}}</text>
+			</view>
+			<view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">取餐时间</label>
+				<text class="weui-form-preview__value">{{item.pickUpTime}}分钟后</text>
+			</view>
+			<view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">用户ID</label>
+				<text class="weui-form-preview__value">{{item.userID}}</text>
+			</view>
+      <view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">订单状态</label>
+				<text class="weui-form-preview__value" >{{item.state==1?"待取餐":"已取餐"}}</text>
+			</view>
+      <view class="weui-form-preview__item">
+				<label class="weui-form-preview__label">价格</label>
+				<text class="weui-form-preview__value">{{item.price}}</text>
+			</view>
+		</view>
+
+		<view wx:if='{{item.state===0}}' class="weui-form-preview__ft">
+			<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap='takeit' data-orderid="{{item.orderID}}">制作中</a>
+		</view>
+	</view>
+</view>
+<view class="noOrder" wx:else>当前无订单</view>

@@ -1,0 +1,14 @@
+<view class="background">
+  <view class="first">
+      <input id="name" placeholder="手机号" placeholder-class='plas' class='inputs' bindinput='phoneInput' type="number" />
+  </view>
+  <view class="second">
+      <input id="psw" placeholder="管理员ID" placeholder-class='plas' class='inputs' type="number" bindinput='adminIDInput' />
+  </view>
+  <button id="btn" class="click" disabled="{{is_disabled}}" 
+  open-type="getUserInfo" bindgetuserinfo="login">登 录</button>
+  
+  <view class="cha" bindtap='signup'>
+    <text class="no">还没有账号？点我注册</text>
+  </view>
+</view>

@@ -4,7 +4,7 @@ Page({
   takeit: function (e) {
     var orderID = e.currentTarget.dataset.orderid
     wx.request({
-      url: 'http://www.foodordering.work/food_ordering_war4/modifyOrderServlet',
+      url: 'http://www.foodordering.work/food_ordering_restructure/modifyOrderServlet',
       method: 'post',
       data: {
         orderID: orderID,
@@ -15,47 +15,41 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       success(res) {
-        if(res.data['error_code']=='0'){
+        if (res.data['error_code'] == '0') {
           wx.showModal({
             title: '用餐愉快！',
             showCancel: false,
             confirmText: '返回主页',
-            success (res) {
+            success(res) {
               if (res.confirm) {
-                wx.switchTab({
+                wx.navigateTo({
                   url: '../userindex/userindex'
                 })
-              } 
               }
+            }
           })
         }
       }
     })
   },
-  /**
-   * 页面的初始数据
-   */
+
   data: {
     orderlist: {},
-    state: ''
+    state: '',
+    tabBar: {}
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-    
+    var tabBar = this.selectComponent(".tabbar")
+    tabBar.editTabBarUser()
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
     var that = this
     var userID = wx.getStorageSync('userID')
     if (wx.getStorageSync('userstate') == 2) {
       wx.request({
-        url: 'http://www.foodordering.work/food_ordering_war4/queryOrderServlet',
+        url: 'http://www.foodordering.work/food_ordering_restructure/queryUserOrderServlet',
         method: 'post',
         data: {
           userID: userID
@@ -65,15 +59,16 @@ Page({
           'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
         },
         success(res) {
+          console.log(res.data)
           if (!res.data['error_code']) {
-            console.log( res.data);
+            console.log(res.data);
             that.setData({
               orderlist: res.data
             })
           }
         }
       })
-    }else{
+    } else {
       that.setData({
         orderlist: {}
       })

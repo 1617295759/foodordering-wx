@@ -1,0 +1,31 @@
+<import src="/components/tabbar/tabbar" />
+<template is="tabbar" data="{{tabBar}}" />
+<tabbar class='tabbar'></tabbar>
+
+<view class="userinfo">
+	<image class="userinfo-avatar" src="{{public_Info.avatarUrl}}" mode="cover"></image>
+	<text class="userinfo-nickname">{{public_Info.nickName}}</text>
+</view>
+<view class="options">
+	<view wx:if="{{userstate!=3}}">
+		<button bindtap="toRegister" class="weui-btn weui-btn_primary">去认证身份</button>
+	</view>
+	<view wx:else>
+		<view class="info">
+			<text>管理员ID</text>
+			<view>{{adminDetailInfo.adminID}}</view>
+		</view>
+		<view class="info"> <text>我的手机</text>
+			<view>{{adminDetailInfo.phone}}</view>
+		</view>
+		<view class="info"> <text>姓名</text>
+			<view>{{adminDetailInfo.adminName}}</view>
+		</view>
+		<button style="margin-top: 100rpx" class="weui-btn weui-btn_default"
+		bindtap="manage">管理菜品</button>
+		<button style="margin-top: 50rpx" class="weui-btn weui-btn_default"
+		bindtap="history">历史订单</button>
+		<button bindtap="exit" class="weui-btn weui-btn_default">退出登录</button>
+	</view>
+
+</view>
