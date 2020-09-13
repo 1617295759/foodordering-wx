@@ -10,8 +10,9 @@ Page({
     adminDetailInfo:{}
   },
   onLoad: function(){
+    var admin = wx.getStorageSync('userInfo')
     this.setData({
-      adminDetailInfo: wx.getStorageInfoSync('userInfo')
+      adminDetailInfo: admin
     })
   },
   onShow: function () {
@@ -28,8 +29,7 @@ Page({
       url: 'http://www.foodordering.work/food_ordering_restructure/queryAdminOrderServlet',
       method: 'post',
       data: {
-        phone: admin.phone,
-        state:1
+        phone: admin.phone
       },
       dataType: "json",
       header: {

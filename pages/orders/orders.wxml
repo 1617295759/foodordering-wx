@@ -1,6 +1,7 @@
 <import src="/components/tabbar/tabbar" />
 <template is="tabbar" data="{{tabBar}}" />
 <tabbar class='tabbar'></tabbar>
+<wxs src="../../utils/transTime.wxs" module="trans"/>
 
 <view wx:if='{{orderlist.length>0&&orderlist.length!=undefined}}'>
 	<view wx:for='{{orderlist}}' wx:key="key" style="margin-bottom:45rpx;margin-left:30rpx;margin-right:30rpx;" class="weui-form-preview">
@@ -21,7 +22,7 @@
 			</view>
 			<view class="weui-form-preview__item">
 				<label class="weui-form-preview__label">订餐时间</label>
-				<text class="weui-form-preview__value">{{item.orderTime}}</text>
+				<text class="weui-form-preview__value">{{trans.trans(item.orderTime)}}</text>
 			</view>
 		</view>
 		<view wx:if='{{item.state===0}}' class="weui-form-preview__ft">

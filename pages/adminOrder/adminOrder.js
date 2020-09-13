@@ -66,7 +66,6 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       success(res) {
-        console.log(res.data)
         if (!res.data['error_code']) {
           that.setData({
             orderlist: res.data

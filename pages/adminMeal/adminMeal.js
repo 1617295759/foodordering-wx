@@ -33,7 +33,7 @@ Page({
       method: 'post',
       data: {
         mealID: that.data.mealID,
-        adminID: that.data.adminDetailInfo.adminID,
+        phone: that.data.adminDetailInfo.phone,
         price: that.data.price,
         state: that.data.state
       },
@@ -49,7 +49,7 @@ Page({
             confirmText: '确定',
             success(res) {
               if (res.confirm) {
-                wx.startPullDownRefresh()
+                that.requestOrder()
               }
             }
           })
@@ -79,7 +79,7 @@ Page({
       method: 'post',
       data: {
         mealID:mealID,
-        adminID: that.data.adminDetailInfo.adminID,
+        phone: that.data.adminDetailInfo.phone,
         price: price,
         state: (state==0)?1:0
       },
@@ -88,6 +88,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       success(res) {
+        console.log(res.data)
         if (res.data['error_code'] == '0') {
           wx.showModal({
             title: '修改成功',
@@ -95,7 +96,7 @@ Page({
             confirmText: '确定',
             success(res) {
               if (res.confirm) {
-                wx.startPullDownRefresh()
+                that.requestOrder()
               }
             }
           })
@@ -112,22 +113,23 @@ Page({
   onShow: function () {
     this.requestOrder()
     setInterval(() => {
-      wx.startPullDownRefresh()//通过方法调用刷新
+      this.requestOrder()//通过方法调用刷新
     }, 10000)
   },
   onPullDownRefresh() {
-    this.requestOrder()
+    var that = this
+    that.requestOrder()
     wx.stopPullDownRefresh()//得到结果后关掉刷新动画
   },
   //从服务器获取菜品信息
-  requestOrder: function () {
+  requestOrder: function() {
     var that = this
     var admin = that.data.adminDetailInfo
     wx.request({
       url: 'http://www.foodordering.work/food_ordering_restructure/queryAdminMealServlet',
       method: 'post',
       data: {
-        adminID: admin.adminID
+        phone: admin.phone
       },
       dataType: "json",
       header: {
@@ -141,6 +143,5 @@ Page({
         }
       }
     })
-
   },
 })

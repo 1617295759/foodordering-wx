@@ -1,0 +1,6 @@
+var trans=function(time){
+  return time.toString().substring(0,19)
+}
+module.exports = {
+  trans: trans
+};

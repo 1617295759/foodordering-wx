@@ -1,9 +1,11 @@
+<wxs src="../../utils/transTime.wxs" module="trans"/>
+
 <view wx:if='{{orderlist.length>0}}'>
 	<view wx:if='{{item.state==1 ||item.state==2}}' wx:for='{{orderlist}}' wx:key="key" style="margin-bottom:45rpx" class="weui-form-preview">
 		<view class="weui-form-preview__hd">
 			<view class="weui-form-preview__item">
 				<label class="weui-form-preview__label">菜品名称</label>
-				<em class="weui-form-preview__value">{{item.name}}</em>
+				<em class="weui-form-preview__value">{{item.meal.name}}</em>
 			</view>
 		</view>
 		<view class="weui-form-preview__bd">
@@ -13,7 +15,7 @@
 			</view>
 			<view class="weui-form-preview__item">
 				<label class="weui-form-preview__label">下单时间</label>
-				<text class="weui-form-preview__value">{{item.orderTime}}</text>
+				<text class="weui-form-preview__value">{{trans.trans(item.orderTime)}}</text>
 			</view>
 			<view class="weui-form-preview__item">
 				<label class="weui-form-preview__label">取餐时间</label>
@@ -29,7 +31,7 @@
 			</view>
       <view class="weui-form-preview__item">
 				<label class="weui-form-preview__label">价格</label>
-				<text class="weui-form-preview__value">{{item.price}}</text>
+				<text class="weui-form-preview__value">{{item.meal.price}}</text>
 			</view>
 		</view>
 

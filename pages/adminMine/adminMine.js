@@ -37,7 +37,7 @@ Page({
     })
     wx.clearStorage()
     wx.reLaunch({
-      url: '../adminLogin/adminLogin',
+      url: '../index/index'
     })
   },
   manage: function(){
